@@ -9,18 +9,19 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public class TestBaseFactory {
+
     String URL_MATCH = "registration";
-    protected static WebDriver driver;
-    protected static final String BASE_URL = "https://mail.ru/";
     final int MAXIMUM_WAIT_TIME = 120;
     private static final int DEFAULT_TIME_OUT = 50;
+    protected static final String BASE_URL = "https://mail.ru/";
+    protected WebDriver driver;
 
-    public static WebDriverWait getWaiter() {
+    public WebDriverWait getWaiter() {
         return new WebDriverWait(driver, DEFAULT_TIME_OUT);
     }
 
     public void waitAppearPage(String title) {
-        getWaiter().until(ExpectedConditions.titleIs(title));
+                getWaiter().until(ExpectedConditions.titleIs(title));
     }
 
     @BeforeClass

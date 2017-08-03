@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-    public  static WebDriver driver;
+    public static WebDriver driver;
     protected static final String BASE_URL = "https://mail.ru/";
     public static void gotoPage(WebDriver driver) {
             driver.get(BASE_URL);
@@ -19,14 +19,8 @@ public class TestBase {
 
     public static WebDriver getWebDriver(){ return driver; }
 
-  /*  public static void driverWait() {
-            final int MAXIMUM_WAIT_TIME = 20;
-            WebDriverWait wait = new WebDriverWait(driver, MAXIMUM_WAIT_TIME);
-    }
-*/
-
     @BeforeClass
-    public static void setup() {
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
