@@ -6,12 +6,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
 import java.util.concurrent.TimeUnit;
 
 public class TestBaseFactory {
 
-    String URL_MATCH = "registration";
-    final int MAXIMUM_WAIT_TIME = 120;
     private static final int DEFAULT_TIME_OUT = 50;
     protected static final String BASE_URL = "https://mail.ru/";
     protected WebDriver driver;
@@ -21,7 +20,7 @@ public class TestBaseFactory {
     }
 
     public void waitAppearPage(String title) {
-                getWaiter().until(ExpectedConditions.titleIs(title));
+        getWaiter().until(ExpectedConditions.titleIs(title));
     }
 
     @BeforeClass
@@ -32,7 +31,7 @@ public class TestBaseFactory {
     }
 
     @AfterClass
-    public void exit(){
+    public void exit() {
         driver.close();
     }
 

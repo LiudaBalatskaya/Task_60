@@ -17,9 +17,11 @@ public class LoginPageFactory {
     @FindBy(id = "mailbox__auth__button")
     private WebElement buttonLogin;
 
-    public void login(){
+    public void login() {
         userName.sendKeys(BASE_USER);
         password.sendKeys(PASSWORD);
         buttonLogin.click();
     }
+
+
 }

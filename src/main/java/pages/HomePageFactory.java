@@ -10,7 +10,11 @@ public class HomePageFactory {
     @FindBy(id = "PH_logoutLink")
     private WebElement logout;
 
-    public void displayedPage(){ letters.isDisplayed();}
+    public void displayedPage() {
+        letters.isDisplayed();
+    }
 
-    public void logout(){ logout.click();}
+    public void logout() {
+        logout.click();
+    }
 }
