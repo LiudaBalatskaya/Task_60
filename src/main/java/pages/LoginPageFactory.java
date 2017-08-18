@@ -17,11 +17,14 @@ public class LoginPageFactory {
     @FindBy(id = "mailbox__auth__button")
     private WebElement buttonLogin;
 
+    @FindBy(id = "portal-menu")
+    public WebElement menu;
+
     public void login() {
         userName.sendKeys(BASE_USER);
         password.sendKeys(PASSWORD);
         buttonLogin.click();
-    }
 
+    }
 
 }

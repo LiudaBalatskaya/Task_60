@@ -1,4 +1,5 @@
 import base.TestBase;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -16,5 +17,7 @@ public class MailRuTest extends TestBase {
     public void gotoMailRu() {
         LoginPage loginPage = new LoginPage();
         loginPage.waitLoginPageAppear();
+        Assert.assertEquals(loginPage.dataTitle(), "ПочтаMail.Ru");
+
     }
 }

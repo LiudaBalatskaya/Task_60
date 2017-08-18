@@ -14,7 +14,9 @@ public class LoginPage {
     private final By USER_NAME = By.id("mailbox__login");
     private final By PASSWORD_INPUT = By.id("mailbox__password");
     private final By SIGN_IN = By.id("mailbox__auth__button");
-    private final By MAIL_RU = By.id("#cnJ1y-uP");
+    private final By MENU = By.id("portal-menu");
+    public final By LOGO = By.cssSelector(".pm-logo__link__pic");
+
     WebDriver driver;
 
     public LoginPage() {
@@ -37,7 +39,11 @@ public class LoginPage {
         enterUserName();
         enterPassword();
         submit();
-        getWaiter().until(ExpectedConditions.titleIs("(3) Входящие - Почта Mail.Ru"));
+        getWaiter().until(ExpectedConditions.visibilityOf(driver.findElement(MENU)));
+    }
+
+    public String dataTitle() {
+        return driver.findElement(LOGO).getAttribute("alt");
     }
 
 }
